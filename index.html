@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SonicBeast IEM Guide | Student Portfolio Project</title>
+    <!-- Google Fonts for premium typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header / Fixed Navigation -->
+    <header class="navbar-header" id="navbar">
+        <div class="nav-container">
+            <!-- Brand Logo -->
+            <a href="#" class="nav-logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo-icon">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15.5h-2v-2h2v2zm0-4h-2v-4h2v4z" fill="currentColor"/>
+                </svg>
+                <span>SonicBeast IEMs</span>
+            </a>
+
+            <!-- Mobile Toggle -->
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Navigation Menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <!-- Navigation Links -->
+            <nav class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="#hero" class="nav-link active">Home</a></li>
+                    <li><a href="#anatomy" class="nav-link">Drivers</a></li>
+                    <li><a href="#graphs" class="nav-link">Sound Graphs</a></li>
+                    <li><a href="#compare" class="nav-link">Comparison</a></li>
+                    <li><a href="#guide" class="nav-link">Buying Guide</a></li>
+                    <li><a href="#showcase" class="nav-link">Gear List</a></li>
+                </ul>
+                <div class="nav-action">
+                    <a href="#contact" class="btn btn-primary btn-sm">Find Your Match</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="hero">
+        <div class="hero-bg-glow"></div>
+        <div class="container hero-container">
+            <div class="hero-content">
+                <div class="hero-badges-wrapper">
+                    <span class="hero-guide-badge">✓ Beginner Guide</span>
+                    <span class="hero-guide-badge">✓ Sound Explained</span>
+                    <span class="hero-guide-badge">✓ Buying Tips</span>
+                </div>
+                
+                <h1 class="hero-title">
+                    Confused About Buying <br>
+                    <span class="gradient-text">Your First IEM?</span>
+                </h1>
+                <h2 class="hero-tagline">Learn Sound. Choose Better.</h2>
+                
+                <p class="hero-subtitle">
+                    Hey! I built this platform because most people waste money buying overrated wireless earbuds that sound muddy. In-Ear Monitors (IEMs) give you studio-level details at a fraction of the cost. Let's break down how they work so you pick the right gear.
+                </p>
+                <div class="hero-actions">
+                    <a href="#anatomy" class="btn btn-primary">Learn Drivers</a>
+                    <a href="#showcase" class="btn btn-secondary">See Top Picks</a>
+                </div>
+            </div>
+            
+            <!-- Hero CSS/SVG Illustration (No image placeholder) -->
+            <div class="hero-visual">
+                <div class="visual-card-wrapper">
+                    <div class="visual-glow"></div>
+                    <div class="visual-card iem-illustration-card">
+                        <!-- Custom CSS/SVG IEM Graphic -->
+                        <div class="iem-shell-graphic">
+                            <svg class="floating-iem-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <!-- Exploded Shell Outline -->
+                                <path d="M25 40c5-15 25-18 35-5s15 30 5 40-30 15-40 0-5-20 0-35z" fill="rgba(127, 0, 255, 0.15)" stroke="var(--color-secondary)" stroke-width="2"/>
+                                <!-- 10mm Dynamic Driver -->
+                                <circle cx="45" cy="50" r="14" fill="rgba(0, 242, 254, 0.2)" stroke="var(--color-primary)" stroke-width="2"/>
+                                <circle cx="45" cy="50" r="8" fill="rgba(255,255,255,0.1)" stroke="var(--color-primary)" stroke-width="1"/>
+                                <!-- Balanced Armature Driver Box -->
+                                <rect x="62" y="42" width="12" height="16" rx="2" fill="rgba(255,255,255,0.15)" stroke="var(--color-primary)" stroke-width="1.5"/>
+                                <!-- Nozzle / Spout -->
+                                <path d="M72 46l10-2v12l-10-2" fill="var(--color-primary)" stroke="var(--color-primary)" stroke-width="1"/>
+                                <path d="M82 42v16" stroke="var(--color-secondary)" stroke-width="2"/>
+                                <!-- 2-pin connector socket -->
+                                <rect x="30" y="24" width="8" height="6" fill="#15141f" stroke="var(--color-primary)" stroke-width="1"/>
+                                <circle cx="32" cy="27" r="1" fill="var(--color-primary)"/>
+                                <circle cx="36" cy="27" r="1" fill="var(--color-primary)"/>
+                            </svg>
+                        </div>
+                        <div class="card-footer-info">
+                            <span class="custom-card-tag">Interactive Acoustic Map</span>
+                            <p class="custom-card-text">Exploded diagram of a standard Hybrid (1 DD + 1 BA) shell setup.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- IEM Drivers/Learning Section -->
+    <section class="anatomy-section" id="anatomy">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Acoustics 101</span>
+                <h2 class="section-title">Understanding Driver Tech</h2>
+                <p class="section-desc">IEMs sound detailed because they use different microscopic speakers. Here are the 4 main types.</p>
+            </div>
+
+            <div class="anatomy-grid">
+                <!-- Part 1: Dynamic Driver -->
+                <div class="anatomy-card">
+                    <div class="anatomy-icon font-gradient-cyan">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"/><path d="M8 12h8"/>
+                        </svg>
+                    </div>
+                    <h4 class="anatomy-title">Dynamic Driver (DD)</h4>
+                    <p class="anatomy-text">Creates bass using air movement. It acts like a tiny speaker woofer with a moving diaphragm. Provides punchy, natural bass and a warm feeling.</p>
+                </div>
+
+                <!-- Part 2: Balanced Armature -->
+                <div class="anatomy-card">
+                    <div class="anatomy-icon font-gradient-purple">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="4" y="4" width="16" height="16" rx="2" ry="2"/>
+                        </svg>
+                    </div>
+                    <h4 class="anatomy-title">Balanced Armature (BA)</h4>
+                    <p class="anatomy-text">Improves vocals and small details. These are tiny metal enclosures that don't push much air but vibrate incredibly fast. Best for clear mids and treble.</p>
+                </div>
+
+                <!-- Part 3: Planar Driver -->
+                <div class="anatomy-card">
+                    <div class="anatomy-icon font-gradient-cyan">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </div>
+                    <h4 class="anatomy-title">Planar Magnetic Driver</h4>
+                    <p class="anatomy-text">Fast response and better separation. Uses a flat, ultra-thin membrane suspended between magnets. Delivers extremely clean sound with zero distortion.</p>
+                </div>
+
+                <!-- Part 4: Piezo Driver -->
+                <div class="anatomy-card">
+                    <div class="anatomy-icon font-gradient-purple">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="12 2 2 22 22 22"/>
+                        </svg>
+                    </div>
+                    <h4 class="anatomy-title">Piezoelectric Driver</h4>
+                    <p class="anatomy-text">Adds extra high frequency clarity. Uses a ceramic element that flexes with electric voltage. Adds sparkle, cymbal shimmer, and top-end extension.</p>
+                </div>
+            </div>
+
+            <!-- Reviewer Tip Box -->
+            <div class="reviewer-tip-box">
+                <span class="tip-badge">Student Reviewer Tip</span>
+                <p class="tip-text">
+                    "Hybrids (IEMs using a Dynamic Driver for bass + Balanced Armatures for treble) usually offer the most fun and detailed sound stage for under ₹5,000. Don't fall for high driver counts alone; implementation and tuning matter much more!"
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Frequency Graph Section -->
+    <section class="graphs-section" id="graphs">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Visualizing Sound</span>
+                <h2 class="section-title">How To Read IEM Sound Graphs</h2>
+                <p class="section-desc">A frequency graph displays the sound balance of an IEM. Humans hear from 20Hz to 20,000Hz, which is divided into three key ranges.</p>
+            </div>
+
+            <div class="graph-layout-grid">
+                <!-- Graph explanation -->
+                <div class="graph-explanation-content">
+                    <h3 class="graph-subsection-title">The Three Main Bands</h3>
+                    <div class="band-cards-list">
+                        <!-- bass -->
+                        <div class="band-item">
+                            <div class="band-color-marker color-sub-bass"></div>
+                            <div class="band-item-details">
+                                <h5>Bass (20Hz - 250Hz)</h5>
+                                <p>Controls the impact, low-end rumble, and kick drum chest thuds. Heavy bass is fun, but can muddy vocals if it leaks too much into the mids.</p>
+                            </div>
+                        </div>
+                        <!-- mids -->
+                        <div class="band-item">
+                            <div class="band-color-marker color-mid-range"></div>
+                            <div class="band-item-details">
+                                <h5>Mids (250Hz - 4kHz)</h5>
+                                <p>Controls vocals and acoustic instruments. If the mids are pushed forward, singers sound like they are performing right in front of you.</p>
+                            </div>
+                        </div>
+                        <!-- treble -->
+                        <div class="band-item">
+                            <div class="band-color-marker color-treble"></div>
+                            <div class="band-item-details">
+                                <h5>Treble (4kHz - 20kHz)</h5>
+                                <p>Governs details, acoustic cymbals, airiness, and clarity. High treble brings out details, but can sound piercing or sharp if tuned poorly.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interactive SVG Graph Visual Card -->
+                <div class="graph-visual-wrapper">
+                    <div class="visual-glow"></div>
+                    <div class="visual-card graph-card">
+                        <div class="graph-header">
+                            <span class="graph-title">Frequency Curve Tool</span>
+                            <div class="graph-legend">
+                                <span class="legend-item"><span class="legend-color line-iem"></span>Active Curve</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Interactive Curve Selectors -->
+                        <div class="curve-mode-selectors">
+                            <button class="btn btn-secondary btn-sm active-curve-btn" id="btn-curve-bass">Bass Head</button>
+                            <button class="btn btn-secondary btn-sm" id="btn-curve-balanced">Balanced</button>
+                            <button class="btn btn-secondary btn-sm" id="btn-curve-bright">Bright Details</button>
+                        </div>
+
+                        <div class="graph-body">
+                            <!-- Grid Background -->
+                            <div class="graph-grid-bg">
+                                <span></span><span></span><span></span><span></span><span></span>
+                            </div>
+                            
+                            <!-- SVG Curve Drawing (Animated by JS) -->
+                            <svg class="graph-svg" viewBox="0 0 500 200" preserveAspectRatio="none">
+                                <!-- Default curve: Bass Head -->
+                                <path id="freq-curve-path" d="M 0,60 Q 50,75 100,130 T 200,135 T 300,90 T 400,105 T 500,150" stroke="var(--color-primary)" stroke-width="3.5" fill="none"/>
+                            </svg>
+                            
+                            <div class="graph-y-axis">
+                                <span>Boost</span><span>Neutral</span><span>Recessed</span>
+                            </div>
+                        </div>
+                        <div class="graph-x-axis">
+                            <span>Bass (20Hz)</span><span>Mids (1kHz)</span><span>Treble (20kHz)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Table Section -->
+    <section class="compare-section" id="compare">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Performance Grid</span>
+                <h2 class="section-title">Enthusiast Comparison Table</h2>
+                <p class="section-desc">Scores are subjective based on standard tuning graphs and personal listening experiences.</p>
+            </div>
+
+            <!-- Comparison Table -->
+            <div class="table-container-wrapper">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>IEM Model</th>
+                            <th>Bass Response</th>
+                            <th>Vocal Mids</th>
+                            <th>Gaming Accuracy</th>
+                            <th>Micro Details</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="table-highlight-col">KZ EDX Pro</td>
+                            <td>9/10 (Boomy, Big Impact)</td>
+                            <td>5/10 (Recessed, Warm)</td>
+                            <td>6/10 (Decent soundstage)</td>
+                            <td>5/10 (Basic resolution)</td>
+                        </tr>
+                        <tr class="featured-row">
+                            <td class="table-highlight-col">Simgot EW300</td>
+                            <td>8/10 (Punchy, Clean)</td>
+                            <td>8/10 (Very natural vocals)</td>
+                            <td>9/10 (Excellent directional cues)</td>
+                            <td>8.5/10 (High separation)</td>
+                        </tr>
+                        <tr>
+                            <td class="table-highlight-col">Truthear Hexa</td>
+                            <td>6/10 (Light, Sub-bass roll)</td>
+                            <td>9/10 (Extremely realistic)</td>
+                            <td>8/10 (Wide soundstage)</td>
+                            <td>9/10 (Pinpoint details)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Buying Guide Section -->
+    <section class="guide-section" id="guide">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Enthusiast Tips</span>
+                <h2 class="section-title">Choosing Your Style</h2>
+                <p class="section-desc">"Don't buy an IEM only because it is trending. Choose based on your listening style."</p>
+            </div>
+
+            <div class="guide-list-grid">
+                <!-- advice 1 -->
+                <div class="guide-item-card">
+                    <span class="guide-cat-badge">Bass Lover</span>
+                    <h4 style="margin-top: 1rem;">Dynamic Driver IEMs</h4>
+                    <p>If you prefer a rumbling bass presence, look for IEMs with a single large <strong>Dynamic Driver</strong>. They push air naturally, creating punchy sub-bass hits.</p>
+                </div>
+
+                <!-- advice 2 -->
+                <div class="guide-item-card">
+                    <span class="guide-cat-badge">Vocal Listener</span>
+                    <h4 style="margin-top: 1rem;">Balanced Tuning</h4>
+                    <p>Look for tunings with a smooth rise around <strong>1kHz to 3kHz</strong> (often called the Harman Target). This pulls vocal frequencies forward so they don't sound flat.</p>
+                </div>
+
+                <!-- advice 3 -->
+                <div class="guide-item-card">
+                    <span class="guide-cat-badge">Gamer</span>
+                    <h4 style="margin-top: 1rem;">Imaging & Soundstage</h4>
+                    <p>For gaming, look for IEMs that highlight high-mid frequencies. This lets you isolate footstep direction and bullet clicks clearly in 3D space.</p>
+                </div>
+
+                <!-- advice 4 -->
+                <div class="guide-item-card">
+                    <span class="guide-cat-badge">Detail Lover</span>
+                    <h4 style="margin-top: 1rem;">Hybrid Drivers</h4>
+                    <p>If you want to isolate individual backing instruments and small details, go for **Hybrids** (combinations of DD, BA, and Planar drivers).</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gear List / Product Showcase -->
+    <section class="showcase-section" id="showcase">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Tested Gear</span>
+                <h2 class="section-title">Recommended Gear List</h2>
+                <p class="section-desc">Real, tested In-Ear Monitors that represent the best value brackets for beginners.</p>
+            </div>
+
+            <div class="showcase-grid">
+                <!-- Product 1: KZ EDX Pro -->
+                <div class="showcase-card">
+                    <div class="showcase-image-container">
+                        <div class="iem-img-placeholder font-gradient-purple">
+                            <!-- CSS IEM Silhouette Representation -->
+                            <div class="sil-iem single-dd-sil"></div>
+                            <span>KZ EDX Pro</span>
+                        </div>
+                    </div>
+                    <div class="showcase-details">
+                        <div class="product-badge-row">
+                            <span class="p-price">~ ₹1,000</span>
+                            <span class="p-class">Beginner IEM</span>
+                        </div>
+                        <h3 class="showcase-name" style="margin: 0.5rem 0;">KZ EDX Pro</h3>
+                        <p class="showcase-description">A super popular ultra-budget IEM. Known for its massive V-shaped bass, making hip-hop and movies sound exciting.</p>
+                        
+                        <div class="showcase-specs-list">
+                            <div class="spec-row"><span class="spec-label">Driver</span><span class="spec-val">10mm Dynamic Driver</span></div>
+                            <div class="spec-row"><span class="spec-label">Sound Signature</span><span class="spec-val">V-Shaped (Fun / Heavy Bass)</span></div>
+                        </div>
+
+                        <div class="pros-cons-box">
+                            <div class="pros-list"><strong>Pros:</strong> Powerful bass, dirt cheap, easy to drive.</div>
+                            <div class="cons-list"><strong>Cons:</strong> Vocals sound recessed, treble can sound harsh.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2: Simgot EW300 -->
+                <div class="showcase-card highlight-card">
+                    <span class="card-featured-tag">My Pick (Best Value)</span>
+                    <div class="showcase-image-container">
+                        <div class="iem-img-placeholder font-gradient-cyan">
+                            <div class="sil-iem hybrid-sil"></div>
+                            <span>Simgot EW300</span>
+                        </div>
+                    </div>
+                    <div class="showcase-details">
+                        <div class="product-badge-row">
+                            <span class="p-price">~ ₹3,500</span>
+                            <span class="p-class">Hybrid Master</span>
+                        </div>
+                        <h3 class="showcase-name" style="margin: 0.5rem 0;">Simgot EW300</h3>
+                        <p class="showcase-description">A multi-driver beast. Combines dynamic driver bass impact with planar speed and ceramic sparkle for amazing value.</p>
+                        
+                        <div class="showcase-specs-list">
+                            <div class="spec-row"><span class="spec-label">Driver</span><span class="spec-val">DD + Planar + Piezo Hybrid</span></div>
+                            <div class="spec-row"><span class="spec-label">Sound Signature</span><span class="spec-val">Balanced Detailed Tuning</span></div>
+                        </div>
+
+                        <div class="pros-cons-box">
+                            <div class="pros-list"><strong>Pros:</strong> Top-tier resolution, solid metal shell.</div>
+                            <div class="cons-list"><strong>Cons:</strong> Cable feels slightly basic, nozzle is thick.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3: Truthear Hexa -->
+                <div class="showcase-card">
+                    <div class="showcase-image-container">
+                        <div class="iem-img-placeholder font-gradient-mix">
+                            <div class="sil-iem multi-ba-sil"></div>
+                            <span>Truthear Hexa</span>
+                        </div>
+                    </div>
+                    <div class="showcase-details">
+                        <div class="product-badge-row">
+                            <span class="p-price">~ ₹6,000</span>
+                            <span class="p-class">Neutral Reference</span>
+                        </div>
+                        <h3 class="showcase-name" style="margin: 0.5rem 0;">Truthear Hexa</h3>
+                        <p class="showcase-description">Perfect for analytical listeners. Tuned flat to replicate studio monitors. Hear every vocal detail and breath clearly.</p>
+                        
+                        <div class="showcase-specs-list">
+                            <div class="spec-row"><span class="spec-label">Driver</span><span class="spec-val">1 DD + 3 Balanced Armatures</span></div>
+                            <div class="spec-row"><span class="spec-label">Sound Signature</span><span class="spec-val">Neutral (Flat / Smooth Mids)</span></div>
+                        </div>
+
+                        <div class="pros-cons-box">
+                            <div class="pros-list"><strong>Pros:</strong> Clean instrument separation, very comfortable.</div>
+                            <div class="cons-list"><strong>Cons:</strong> Bass can feel light or lacking rumble.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Matcher / Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="contact-card-wrapper">
+                <div class="contact-glow"></div>
+                <div class="contact-card">
+                    <div class="contact-grid">
+                        <div class="contact-info">
+                            <h2 class="contact-title">Find Your IEM Match</h2>
+                            <p class="contact-subtitle">Not sure which one fits your budget? Use this client-side selector tool I programmed to instantly match you with a tested IEM.</p>
+                            
+                            <div class="info-list" style="margin-top: 2rem;">
+                                <div class="info-item">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                        <polyline points="22 4 12 14.01 9 11.01"/>
+                                    </svg>
+                                    <span>Original Tested Products</span>
+                                </div>
+                                <div class="info-item">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                        <polyline points="22 4 12 14.01 9 11.01"/>
+                                    </svg>
+                                    <span>No Affiliation / Honest Reviews</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Inquiry / Matcher Form -->
+                        <form class="contact-form" id="matcherForm">
+                            <div class="form-group">
+                                <label for="userBudget">What is your budget limit?</label>
+                                <select id="userBudget" name="budget" required class="select-dropdown">
+                                    <option value="" disabled selected>Select Budget</option>
+                                    <option value="1000">Under ₹1,500</option>
+                                    <option value="3000">₹1,500 - ₹4,500</option>
+                                    <option value="5000">₹4,500+</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="userPurpose">What is your main usage?</label>
+                                <select id="userPurpose" name="purpose" required class="select-dropdown">
+                                    <option value="" disabled selected>Select Use Case</option>
+                                    <option value="music">Casual Music Listening</option>
+                                    <option value="gaming">Competitive Gaming</option>
+                                    <option value="editing">Audio Mixing / Video Editing</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="userPreference">What sound style do you prefer?</label>
+                                <select id="userPreference" name="preference" required class="select-dropdown">
+                                    <option value="" disabled selected>Select Preference</option>
+                                    <option value="bass">Big, Punchy Bass</option>
+                                    <option value="balanced">Natural / Vocals</option>
+                                    <option value="details">Extreme Details &amp; Sparkle</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block" id="formSubmitBtn">Suggest My IEM</button>
+                            <p class="form-feedback-message" id="formFeedback"></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Details -->
+            <footer class="footer">
+                <div class="footer-top">
+                    <a href="#" class="nav-logo">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15.5h-2v-2h2v2zm0-4h-2v-4h2v4z" fill="currentColor"/>
+                        </svg>
+                        <span>SonicBeast IEM Guide</span>
+                    </a>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2026 SonicBeast. Built by a 3rd-year engineering student as a responsive landing page project.</p>
+                    <ul class="footer-links">
+                        <li><a href="#">Privacy</a></li>
+                        <li><a href="#graphs">Acoustics Guide</a></li>
+                    </ul>
+                </div>
+            </footer>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
